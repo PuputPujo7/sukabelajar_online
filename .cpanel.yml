@@ -1,0 +1,15 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/n1604621/public_html/sukabelajar.online
+    - /bin/cp -r * $DEPLOYPATH/sukabelajar.online #copy all from root
+#    - /bin/cp -r ./public/* $DEPLOYPATH/public_html/
+    - /bin/cp ./public/js/*.js $DEPLOYPATH/public_html/sukabelajar.online/js
+    - /bin/cp ./public/css/*.css $DEPLOYPATH/public_html/sukabelajar.online/css
+# ---
+# deployment:
+#   tasks:
+#     - export DEPLOYPATH=/home/n1604621/public_html
+#     - /bin/cp index.html * $DEPLOYPATH
+#     - /bin/cp style.css * $DEPLOYPATH
+#     - /bin/cp -R img * $DEPLOYPATH
