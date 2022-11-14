@@ -67,16 +67,6 @@ use Filament\Forms\Components\TextInput;
 TextInput::make('name')->id('name-field')
 ```
 
-### Validation attributes
-
-When fields fail validation, their label is used in the error message. To customize the label used in field error messages, use the `validationAttribute()` method:
-
-```php
-use Filament\Forms\Components\TextInput;
-
-TextInput::make('name')->validationAttribute('full name')
-```
-
 ### Setting a default value
 
 Fields may have a default value. This will be filled if the [form's `fill()` method](getting-started#default-data) is called without any arguments. To define a default value, use the `default()` method:
@@ -86,6 +76,8 @@ use Filament\Forms\Components\TextInput;
 
 TextInput::make('name')->default('John')
 ```
+
+Note that inside the admin panel this only works on Create Pages, as Edit Pages will always fill the data from the model.
 
 ### Helper messages and hints
 
@@ -190,6 +182,24 @@ use Filament\Resources\Pages\Page;
 TextInput::make('slug')
     ->disabled()
     ->dehydrated(fn (Page $livewire) => $livewire instanceof CreateRecord)
+```
+
+### Hiding
+
+You may hide a field:
+
+```php
+use Filament\Forms\Components\TextInput;
+
+TextInput::make('name')->hidden()
+```
+
+Optionally, you may pass a boolean value to control if the field should be hidden or not:
+
+```php
+use Filament\Forms\Components\TextInput;
+
+TextInput::make('name')->hidden(! auth()->user()->isAdmin())
 ```
 
 ### Autofocusing
@@ -916,6 +926,21 @@ CheckboxList::make('technologies')
 ![](https://user-images.githubusercontent.com/41773797/147761438-558a9dcc-b81a-4fbe-a922-a6771407d928.png)
 
 This method accepts the same options as the `columns()` method of the [grid](layout#grid). This allows you to responsively customize the number of columns at various breakpoints.
+
+You may also allow users to toggle all checkboxes at once using the `bulkToggleable()` method:
+
+```php
+use Filament\Forms\Components\CheckboxList;
+
+CheckboxList::make('technologies')
+    ->options([
+        'tailwind' => 'Tailwind CSS',
+        'alpine' => 'Alpine.js',
+        'laravel' => 'Laravel',
+        'livewire' => 'Laravel Livewire',
+    ])
+    ->bulkToggleable()
+```
 
 ### Populating automatically from a relationship
 
@@ -1665,7 +1690,7 @@ You are trying to retrieve the value of `client_id` from inside the repeater ite
 
 `$get()` is relative to the current repeater item, so `$get('client_id')` is looking for `$get('repeater.item1.client_id')`.
 
-You can use `../` to go up a level in the data structure, so `$get('../client_id')` is $get('repeater.client_id') and `$get('../../client_id')` is `$get('client_id')`.
+You can use `../` to go up a level in the data structure, so `$get('../client_id')` is `$get('repeater.client_id')` and `$get('../../client_id')` is `$get('client_id')`.
 
 ## Builder
 
