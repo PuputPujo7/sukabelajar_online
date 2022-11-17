@@ -15,6 +15,7 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="https://unpkg.com/alpinejs" defer=""></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" />
     <script defer src="https://unpkg.com/alpinejs@3.7.0/dist/cdn.min.js"></script>
 

@@ -1,15 +1,7 @@
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./src/**/*.{html,js}",
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
@@ -19,3 +11,25 @@ module.exports = {
   },
   plugins: [],
 }
+
+// /** @type {import('tailwindcss').Config} */
+// module.exports = {
+//   content: [],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// }
+
+// /** @type {import('tailwindcss').Config} */
+// module.exports = {
+//   content: [
+//     "./resources/**/*.blade.php",
+//     "./resources/**/*.js",
+//     "./resources/**/*.vue",
+//   ],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// }
