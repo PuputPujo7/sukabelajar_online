@@ -19,6 +19,7 @@ class PaketResource extends Resource
     protected static ?string $model = Pakets::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Frontend Management';
 
     public static function form(Form $form): Form
     {
