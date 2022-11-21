@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\PaketResource\Pages;
+namespace App\Filament\Resources\KategoriResource\Pages;
 
-use App\Filament\Resources\PaketResource;
+use App\Filament\Resources\KategoriResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditPaket extends EditRecord
+class EditKategori extends EditRecord
 {
-    protected static string $resource = PaketResource::class;
+    protected static string $resource = KategoriResource::class;
 
     protected function getActions(): array
     {

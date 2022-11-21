@@ -4,7 +4,7 @@
     
         <div class="flex bg-pink-50 rounded-lg shadow relative w-full px-3 py-3 justify-center items-center3">
 
-            @foreach ($pakets as $paket)
+            @foreach ($kategoris as $kategori)
 
             <!-- Modal toggle -->
             {{-- <button
@@ -13,14 +13,14 @@
                 <div
                     class="flex shadow rounded mr-1/2 ml-1/2 mb-2 hover:scale-150 transition duration-300 ease-in-out">
                     <a 
-                    href="{{route('detail',$paket->id)}}" class="elipsis"
+                    href="{{route('detail',$kategori->id)}}" class="elipsis"
                     >
                         
                     
                     <div class="w-full p-1 md:p-2">
                         <img alt="gallery" class="block object-cover object-center rounded-lg" style="height: 200px"
-                            src="{{ asset('storage/' . $paket->gambar) }}"> 
-                            {{-- src="paket/paket2.jpeg"> --}}
+                            src="{{ asset('storage/' . $kategori->gambar) }}"> 
+                            {{-- src="kategori/kategori2.jpeg"> --}}
                     </div>
                     </a>
                     {{-- <div class="bg-blue-200 w-full rounded m-1">
@@ -52,7 +52,7 @@
                         <!-- Modal body -->
                         <div class="p-6">
                             <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                                src="{{ asset('storage/' . $pakets->gambar) }}">
+                                src="{{ asset('storage/' . $kategoris->gambar) }}">
                         </div>
                     </div>
                 </div>

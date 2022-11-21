@@ -18,8 +18,8 @@
                             </svg>
                         </a>
                     </button>
-                    <img alt="paket" class="block object-cover object-center w-auto h-100 rounded-lg text-center items-center justify-center"
-                        src="{{ asset('storage/' . $pakets->gambar) }}" style="height: 700px">
+                    <img alt="kategori" class="block object-cover object-center w-auto h-100 rounded-lg text-center items-center justify-center"
+                        src="{{ asset('storage/' . $kategoris->gambar) }}" style="height: 700px">
 
                 </div>
 
@@ -38,7 +38,7 @@
                     <button type="button"
                         class="bg-transparent hover:bg-gray-200 rounded-lg text-sm p-1.5 ml-auto flex items-center dark:hover:text-white"
                         data-modal-toggle="default-modal">
-                        <a href="/paket">
+                        <a href="/kategori">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -50,8 +50,8 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-6">
-                    <img alt="paket" class="block object-cover object-center w-full h-full rounded-lg"
-                        src="{{ asset('storage/'.$pakets->gambar) }}">
+                    <img alt="kategori" class="block object-cover object-center w-full h-full rounded-lg"
+                        src="{{ asset('storage/'.$kategoris->gambar) }}">
 
                 </div>
             </div>

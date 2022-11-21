@@ -8,10 +8,8 @@ use App\Http\Livewire\Haji;
 use App\Http\Livewire\Galeri;
 use App\Http\Livewire\GaleriDetail;
 use App\Http\Livewire\Kontak;
-use App\Http\Livewire\Paket;
-// use App\Http\Livewire\Paket;
-use App\Http\Livewire\PaketDetail;
-use App\Http\Livewire\PaketUmroh;
+use App\Http\Livewire\KategoriDetail;
+use App\Http\Livewire\Kategori;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,12 +33,12 @@ Route::get('/umroh', Umroh::class)->name('umroh');
 Route::get('/haji', Haji::class)->name('haji');
 Route::get('/galeri', Galeri::class)->name('galeri');
 Route::get('/kontak', Kontak::class)->name('kontak');
-// Route::get('/paket-umroh-{id}', PaketUmroh::class)->name('paket-umroh');
+// Route::get('/Kategori-umroh-{id}', KategoriUmroh::class)->name('Kategori-umroh');
 
 // Route::get('/', Home::class)->name('home');
-Route::get('/paket', PaketUmroh::class)->name('paket');
+Route::get('/Kategori', Kategori::class)->name('Kategori');
 // Route::get('/profil', Profil::class)->name('profil');
 // Route::get('/galeri', Galeri::class)->name('galeri');
 Route::get('/coba', Coba::class)->name('coba');
-Route::get('/umroh-{id}', PaketDetail::class)->name('detail');
+Route::get('/umroh-{id}', KategoriDetail::class)->name('detail');
 Route::get('/galeri-{id}', GaleriDetail::class)->name('galeri-detail');

@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PaketResource\Pages;
-use App\Filament\Resources\PaketResource\RelationManagers;
-use App\Models\Pakets;
+use App\Filament\Resources\KategoriResource\Pages;
+use App\Filament\Resources\KategoriResource\RelationManagers;
+use App\Models\Kategori;
+use App\Models\Kategoris;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -14,9 +15,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 
-class PaketResource extends Resource
+class KategoriResource extends Resource
 {
-    protected static ?string $model = Pakets::class;
+    protected static ?string $model = Kategoris::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
     protected static ?string $navigationGroup = 'Frontend Management';
@@ -29,15 +30,15 @@ class PaketResource extends Resource
                 // Forms\Components\TextInput::make('jenis')->required(),
                 Select::make('jenis')->required()
                         ->options([
-                            'umroh' => 'Umroh',
-                            'haji' => 'Haji',
+                            'matematika' => 'Matematika',
+                            'tik' => 'TIK',
                         ]),
                 Forms\Components\FileUpload::make('gambar')->required(),
-                Select::make('status')
-                        ->options([
-                            'open' => 'Open',
-                            'fullbooked' => 'Fullbooked',
-                        ])
+                // Select::make('status')
+                //         ->options([
+                //             'open' => 'Open',
+                //             'closed' => 'Closed',
+                //         ])
             ]);
     }
 
@@ -74,9 +75,9 @@ class PaketResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPakets::route('/'),
-            'create' => Pages\CreatePaket::route('/create'),
-            'edit' => Pages\EditPaket::route('/{record}/edit'),
+            'index' => Pages\ListKategoris::route('/'),
+            'create' => Pages\CreateKategori::route('/create'),
+            'edit' => Pages\EditKategori::route('/{record}/edit'),
         ];
     }    
 }
